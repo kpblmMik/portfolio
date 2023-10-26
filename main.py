@@ -11,3 +11,10 @@ skills = ["Python", "git", "Linux", "html css js", "aws cli", "clouformation"]
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "name": name, "skills": skills})
+
+@app.get("/contact", response_class=HTMLResponse)
+async def contact_form(request: Request):
+    return templates.TemplateResponse(
+        "contact.html",
+        {"request": request, "name": name, "skills": skills}
+    )
