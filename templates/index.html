@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Mikhail Sarnov</h1>
+    <h1>{{ name }}</h1>
     <h2>DevOps engineer</h2>
     <nav>
         <ul>
@@ -20,12 +20,9 @@
     <h3>Skills</h3>
     <p>Mit diesen Tools und Sprachen arbeite In jeden Tag</p>
     <ul>
-        <li>Python</li>
-        <li>git</li>
-        <li>Linux</li>
-        <li>html css js</li>
-        <li>aws cli</li>
-        <li>clouformation</li>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
     </ul>
     <h3 id="kontakt">Kontakt</h3>
     <form action="/submit_contact_form" method="post">
